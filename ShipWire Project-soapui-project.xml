@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="bf19a7b3-8427-443d-9576-0a48dd0e7541" activeEnvironment="Default" name="ShipWire Project" resourceRoot="${projectDir}" soapui-version="5.1.3" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:RestService" id="36252263-0c7d-4794-accc-be81503c57e6" wadlVersion="http://wadl.dev.java.net/2009/02" name="https://beta.shipwire.com" type="rest" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart=""/><con:endpoints><con:endpoint>https://beta.shipwire.com</con:endpoint></con:endpoints><con:resource name="Orders" path="" id="19d626c6-4929-42be-a3a5-9d059df62c3d"><con:settings/><con:parameters/><con:method name="POST Order" id="29545786-f887-4e89-99de-06536569ad17" method="POST"><con:settings/><con:parameters/><con:representation type="REQUEST"><con:mediaType>application/x-www-form-urlencoded</con:mediaType><con:params/></con:representation><con:representation type="RESPONSE"><con:mediaType>text/html; charset=UTF-8</con:mediaType><con:status>200</con:status><con:params/><con:element>html</con:element></con:representation><con:representation type="FAULT"><con:mediaType>application/json</con:mediaType><con:status>400 401 404 422</con:status><con:params/><con:element xmlns:ord="https://www.shipwire.com/w/developers/order/">ord:Fault</con:element></con:representation><con:representation type="REQUEST"><con:mediaType>application/json</con:mediaType><con:params/></con:representation><con:representation type="RESPONSE"><con:mediaType>application/json</con:mediaType><con:status>200</con:status><con:params/><con:element xmlns:ord="https://www.shipwire.com/w/developers/order/">ord:Response</con:element></con:representation><con:request name="Request 1" id="a464c967-0b09-454d-bdd0-8e4ee0e0ad67" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>https://api.shipwire.com/api/v3/orders</con:endpoint><con:request>
+{
+ "shipTo": {
+ "email": "foo3@bar.com",
+ "name": "Foo3 Bar",
+ "address1": "36329 Fremont blvd",
+ "address2": "",
+ "company": "",
+ "city": "Fremont",
+ "state": "CA",
+ "postalCode": "94536",
+ "country": "US",
+ "phone": "1112223334"
+ },
+ "items":[{
+ "sku":"Frog-Keychain",
+ "quantity":1
+ }]
+}</con:request><con:originalUri>https://www.shipwire.com/w/developers/order/</con:originalUri><con:credentials><con:username>shiptest@mailinator.com</con:username><con:password>test1234</con:password><con:domain>https://api.shipwire.com</con:domain><con:selectedAuthProfile>Basic</con:selectedAuthProfile><con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/><con:parameterOrder/></con:request></con:method><con:method name="GET Order" id="bc5ef7c6-0d6b-446d-bd48-a6cf1ab896df" method="GET"><con:settings/><con:parameters/><con:representation type="FAULT"><con:mediaType>application/json</con:mediaType><con:status>401</con:status><con:params/><con:element xmlns:ns="https://api.shipwire.com/api/v3/orders/213333342">ns:Fault</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType>application/json</con:mediaType><con:status>200</con:status><con:params/><con:element xmlns:ns="https://api.shipwire.com/api/v3/orders/213333342">ns:Response</con:element></con:representation><con:request name="Request 1" id="c13759b7-97a3-4088-a44c-12cc47bba456" mediaType="application/json"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>https://api.shipwire.com/api/v3/orders</con:endpoint><con:request/><con:credentials><con:username>shiptest@mailinator.com</con:username><con:password>test1234</con:password><con:domain>https://api.shipwire.com</con:domain><con:selectedAuthProfile>Basic</con:selectedAuthProfile><con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:request></con:method><con:method name="PUT order" id="264bad60-e68b-4ff6-8bea-ad1d4505695f" method="PUT"><con:settings/><con:parameters/><con:representation type="RESPONSE"><con:mediaType>application/json</con:mediaType><con:status>200</con:status><con:params/><con:element xmlns:ns="https://api.shipwire.com/api/v3/orders/213355932">ns:Response</con:element></con:representation><con:representation type="REQUEST"><con:mediaType>application/json</con:mediaType><con:params/></con:representation><con:request name="Request 1" id="e07c93d5-26ae-4d97-83ae-4923dedf1e08" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>https://api.shipwire.com/api/v3/orders</con:endpoint><con:request/><con:credentials><con:username>shiptest@mailinator.com</con:username><con:password>test1234</con:password><con:domain>https://api.shipwire.com</con:domain><con:selectedAuthProfile>Basic</con:selectedAuthProfile><con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:request></con:method></con:resource></con:interface><con:testSuite id="f8eaca02-0759-4fb9-b4ae-83fe1b24f04e" name="PostPutCancel"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase id="1bde95ee-2058-499d-9321-d5b8ab472e68" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="PostPutCancel1" searchProperties="true"><con:settings/><con:testStep type="groovy" name="Groovy apt Random" id="41b2ec53-067d-4e6f-91ab-0304e4e3b610"><con:settings/><con:config><script>def tc = testRunner.testCase;
+// then i generate random apt number 
+aptRandom = Math.abs(new Random().nextInt() % 221) + 101
+//log.info aptRandom
+aptRandStr = aptRandom.toString()
+log.info aptRandStr
+// Assign random apt number to Test case var
+tc.setPropertyValue("aptRand",aptRandStr)
+//random townhouse number
+townhRandom = Math.abs(new Random().nextInt() % 53) + 36325
+if(townhRandom%2==0) {  // any condition to switch the direction 
+      townhRandom = townhRandom + 1  
+  }
+townhRandStr = townhRandom.toString()
+log.info townhRandStr
+// Assign random townhouse number to Test case var
+tc.setPropertyValue("townhRand",townhRandStr)</script></con:config></con:testStep><con:testStep type="restrequest" name="OrderPost1" id="3298d8b6-2d8b-4bcf-8362-994bc249008a"><con:settings/><con:config service="https://beta.shipwire.com" resourcePath="" methodName="POST Order" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="OrderPost1" id="a464c967-0b09-454d-bdd0-8e4ee0e0ad67" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>https://api.shipwire.com/api/v3/orders</con:endpoint><con:request>
+{
+ "shipTo": {
+ "email": "foo66@bar.com",
+ "name": "Foo66 Bar",
+ "address1": "333 Escuela ave apt ${#TestCase#aptRand}",
+ "address2": "",
+ "company": "",
+ "city": "Mountain View",
+ "state": "CA",
+ "postalCode": "94040",
+ "country": "US",
+ "phone": "111222337"
+ },
+ "items":[{
+ "sku":"Frog-Keychain",
+ "quantity":1
+ }]
+}</con:request><con:originalUri>https://www.shipwire.com/w/developers/order/</con:originalUri><con:assertion type="Simple Contains" id="3b970164-5418-4f9b-b8a5-b64c531b78f9" name="Contains Successful"><con:configuration><token>Successful</token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:assertion type="Simple Contains" id="f37a2a00-f1ba-4cca-ac5f-ccfa188a019c" name="Contains resourceLocation"><con:configuration><token>"resourceLocation"</token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:assertion type="Simple Contains" id="35c0daef-35d3-47ab-a284-12f4f884984f" name="Contains transactionId"><con:configuration><token>transactionId</token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:assertion type="GroovyScriptAssertion" id="985cf4d3-38a5-49ea-850c-25f1e869fbd7" name="Script Assertion"><con:configuration><scriptText>import groovy.json.JsonSlurper 
+def response = messageExchange.response.responseContent
+log.info response
+
+def slurper = new JsonSlurper()
+def json = slurper.parseText response
+log.info json
+log.info json.id</scriptText></con:configuration></con:assertion><con:assertion type="Simple Contains" id="956a3881-a94e-4e61-81a8-b6f3a491b29b" name="Contains held"><con:configuration><token>held</token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:credentials><con:username>shiptest@mailinator.com</con:username><con:password>test1234</con:password><con:domain>https://api.shipwire.com</con:domain><con:selectedAuthProfile>Basic</con:selectedAuthProfile><con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/><con:parameterOrder/></con:restRequest></con:config></con:testStep><con:testStep type="restrequest" name="OrderPost2 townh" id="aea3c284-ace5-4a38-8bff-173d4d53bd2a" disabled="true"><con:settings/><con:config service="https://beta.shipwire.com" resourcePath="" methodName="POST Order" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="OrderPost2 townh" id="a464c967-0b09-454d-bdd0-8e4ee0e0ad67" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>https://api.shipwire.com/api/v3/orders</con:endpoint><con:request>
+{
+ "shipTo": {
+ "email": "foo33@bar.com",
+ "name": "Foo33 Bar",
+ "address1": "'${townhRand}' Fremont blvd",
+ "address2": "",
+ "company": "",
+ "city": "Fremont",
+ "state": "CA",
+ "postalCode": "94536",
+ "country": "US",
+ "phone": "111222447"
+ },
+ "items":[{
+ "sku":"Frog-Keychain",
+ "quantity":1
+ }]
+}</con:request><con:originalUri>https://www.shipwire.com/w/developers/order/</con:originalUri><con:assertion type="Simple Contains" id="3b970164-5418-4f9b-b8a5-b64c531b78f9" name="Contains Successful"><con:configuration><token>Successful</token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:assertion type="Simple Contains" id="f37a2a00-f1ba-4cca-ac5f-ccfa188a019c" name="Contains resourceLocation"><con:configuration><token>"resourceLocation"</token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:assertion type="Simple Contains" id="35c0daef-35d3-47ab-a284-12f4f884984f" name="Contains transactionId"><con:configuration><token>transactionId</token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:assertion type="GroovyScriptAssertion" id="985cf4d3-38a5-49ea-850c-25f1e869fbd7" name="Script Assertion"><con:configuration><scriptText>import groovy.json.JsonSlurper 
+def response = messageExchange.response.responseContent
+log.info response
+
+def slurper = new JsonSlurper()
+def json = slurper.parseText response
+log.info json
+log.info json.id</scriptText></con:configuration></con:assertion><con:credentials><con:username>shiptest@mailinator.com</con:username><con:password>test1234</con:password><con:domain>https://api.shipwire.com</con:domain><con:selectedAuthProfile>Basic</con:selectedAuthProfile><con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/><con:parameterOrder/></con:restRequest></con:config></con:testStep><con:testStep type="groovy" name="Groovy Get Order id" id="9592d0fe-ecb2-4c41-bdda-0ebabd589f76"><con:settings/><con:config><script>import groovy.json.JsonSlurper 
+def slurper = new JsonSlurper()
+ def response = context.expand( '${OrderPost1#Response}' )
+def jsonRes = slurper.parseText(response)
+def id = jsonRes.resource.items.resource.id
+// log.info jsonRes.resource.items.resource.id
+log.info id
+// Set up orderId  from POST response 
+def tc = testRunner.testCase;
+def ts = testRunner.testCase.testSuite;
+strIdFull = id.toString()
+len = strIdFull.length()
+log.info len
+strId = strIdFull.substring(1,len-1)
+log.info strId
+//tc.setPropertyValue("orderId",id.toString());
+tc.setPropertyValue("orderId",strId);
+ts.setPropertyValue("orderId",strId);
+// nMake a pause here : 7 seconds
+sleep(7000)</script></con:config></con:testStep><con:testStep type="groovy" name="Groovy idle3" id="d328720e-e65f-47fc-81c2-067c9c486f83" disabled="true"><con:settings/><con:config><script>def slurper = new groovy.json.JsonSlurper()
+ def result = slurper.parseText('{"person":{"name":"Guillaume","age":33,"pets":["dog","cat"]}}')
+
+ assert result.person.name == "Guillaume"
+ assert result.person.age == 33
+ assert result.person.pets.size() == 2
+ assert result.person.pets[0] == "dog"
+ assert result.person.pets[1] == "cat"</script></con:config></con:testStep><con:testStep type="groovy" name="Groovy response1" id="17934999-2c7c-4c53-a9a7-2c5e59722496" disabled="true"><con:settings/><con:config><script>def case1 = testRunner.testCase
+def step = case1.getTestStepByName('OrderPost1')
+def res= step.getProperty('Response')
+log.info res.value</script></con:config></con:testStep><con:testStep type="restrequest" name="GET order" id="812e81b0-c8d5-47de-8326-2b8012a37993"><con:settings/><con:config service="https://beta.shipwire.com" resourcePath="" methodName="GET Order" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="GET order" id="c13759b7-97a3-4088-a44c-12cc47bba456" mediaType="application/json"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>https://api.shipwire.com/api/v3/orders/${#TestSuite#orderId}</con:endpoint><con:request/><con:originalUri>https://api.shipwire.com/api/v3/orders/213333342</con:originalUri><con:assertion type="Simple Contains" id="d28c7864-16b9-46e6-b6b8-31ba9ad545f7" name="Contains held"><con:configuration><token>held</token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:assertion type="Simple Contains" id="9012a63f-00d1-40f0-8221-11bbf6257e77" name="Contains status"><con:configuration><token>status</token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:assertion type="Simple Contains" id="3fa53016-87bf-4c5e-b3a6-ed9bea39b659" name="Contains address"><con:configuration><token>333 Escuela ave apt ${#TestCase#aptRand}</token><ignoreCase>true</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:assertion type="Simple Contains" id="e41fe80e-fb24-414f-8f3e-3bf5520dec52" name="Contains id"><con:configuration><token>${#TestSuite#orderId}</token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:credentials><con:username>shiptest@mailinator.com</con:username><con:password>test1234</con:password><con:domain>https://api.shipwire.com</con:domain><con:selectedAuthProfile>Basic</con:selectedAuthProfile><con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:restRequest></con:config></con:testStep><con:testStep type="restrequest" name="GET order/items" id="74bcce7f-cd7f-432d-ab8f-c8b56de6aaf6"><con:settings/><con:config service="https://beta.shipwire.com" resourcePath="" methodName="GET Order" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="GET order/items" id="c13759b7-97a3-4088-a44c-12cc47bba456" mediaType="application/json"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>https://api.shipwire.com/api/v3/orders/${#TestSuite#orderId}/items</con:endpoint><con:request/><con:originalUri>https://api.shipwire.com/api/v3/orders/213333342/items</con:originalUri><con:assertion type="Simple Contains" id="6ad09f58-4626-4797-a6a2-b97696439192" name="Contains items"><con:configuration><token>items</token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:assertion type="Simple Contains" id="5d204b0e-dd03-4c48-ac63-17ec76b0a2c2" name="Contains id"><con:configuration><token>${#TestSuite#orderId}</token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:credentials><con:username>shiptest@mailinator.com</con:username><con:password>test1234</con:password><con:domain>https://api.shipwire.com</con:domain><con:selectedAuthProfile>Basic</con:selectedAuthProfile><con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:restRequest></con:config></con:testStep><con:testStep type="restrequest" name="PUT order" id="0c0fe15c-b93a-415e-a684-84baa21349e7"><con:settings/><con:config service="https://beta.shipwire.com" resourcePath="" methodName="PUT order" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="PUT order" id="e07c93d5-26ae-4d97-83ae-4923dedf1e08" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>https://api.shipwire.com/api/v3/orders/${#TestSuite#orderId}</con:endpoint><con:request>{
+ "shipTo": {
+ "email": "foo66@bar.com",
+ "name": "Foo66 Bar",
+ "address1": "333 Escuela ave apt ${#TestCase#aptRand}",
+ "address2": "",
+ "company": "",
+ "city": "Mountain View",
+ "state": "CA",
+ "postalCode": "94040",
+ "country": "US",
+ "phone": "111222337"
+ },
+ "items":[{
+ "sku":"Frog-Keychain",
+ "quantity":3
+ }]
+}</con:request><con:originalUri>https://api.shipwire.com/api/v3/orders/213355932</con:originalUri><con:assertion type="Simple Contains" id="623aec3f-31a5-4259-a135-92c6f4808366" name="Contains address"><con:configuration><token>333 Escuela ave apt ${#TestCase#aptRand}</token><ignoreCase>true</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:assertion type="Simple Contains" id="916f409e-c063-4284-b12c-752d2b3e7573" name="Contains id"><con:configuration><token>${#TestSuite#orderId}</token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:assertion type="Simple Contains" id="3ae26f3f-b671-4b84-a378-4d0a246ed71e" name="Contains Successful"><con:configuration><token>Successful</token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:assertion type="Simple Contains" id="15593e31-cb39-4772-b7af-e18ef67c401c" name="Contains  held"><con:configuration><token>held</token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:credentials><con:username>shiptest@mailinator.com</con:username><con:password>test1234</con:password><con:domain>https://api.shipwire.com</con:domain><con:selectedAuthProfile>Basic</con:selectedAuthProfile><con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:restRequest></con:config></con:testStep><con:testStep type="groovy" name="Groovy pause" id="2eceb8fc-947a-44a2-bc42-99f2ecfd3ef3"><con:settings/><con:config><script>// nMake a pause here : 7 seconds
+sleep(7000)</script></con:config></con:testStep><con:testStep type="restrequest" name="GET order/items after PUT" id="b81e3a16-ea64-46c1-ba4e-effbcee12b3e"><con:settings/><con:config service="https://beta.shipwire.com" resourcePath="" methodName="GET Order" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="GET order/items after PUT" id="c13759b7-97a3-4088-a44c-12cc47bba456" mediaType="application/json"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>https://api.shipwire.com/api/v3/orders/${#TestSuite#orderId}/items</con:endpoint><con:request/><con:originalUri>https://api.shipwire.com/api/v3/orders/213333342/items</con:originalUri><con:credentials><con:username>shiptest@mailinator.com</con:username><con:password>test1234</con:password><con:domain>https://api.shipwire.com</con:domain><con:selectedAuthProfile>Basic</con:selectedAuthProfile><con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:restRequest></con:config></con:testStep><con:testStep type="restrequest" name="Cancel order" id="1270d3e3-6cd4-4b55-88f9-e1101cc8ba21"><con:settings/><con:config service="https://beta.shipwire.com" resourcePath="" methodName="POST Order" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="Cancel order" id="a464c967-0b09-454d-bdd0-8e4ee0e0ad67" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>https://api.shipwire.com/api/v3/orders/${#TestSuite#orderId}/cancel</con:endpoint><con:request/><con:originalUri>https://www.shipwire.com/w/developers/order/</con:originalUri><con:assertion type="Simple Contains" id="f37a2a00-f1ba-4cca-ac5f-ccfa188a019c" name="Contains resourceLocation"><con:configuration><token>"resourceLocation"</token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:assertion type="Simple Contains" id="f1fb56e1-14e4-406a-9bc4-279ce1c71234" name="Contains Order cancelled"><con:configuration><token>Order cancelled</token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:credentials><con:username>shiptest@mailinator.com</con:username><con:password>test1234</con:password><con:domain>https://api.shipwire.com</con:domain><con:selectedAuthProfile>Basic</con:selectedAuthProfile><con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/><con:parameterOrder/></con:restRequest></con:config></con:testStep><con:testStep type="groovy" name="Groovy pause2" id="5aecb88a-5855-449e-bc47-9a4d3aa1cae5"><con:settings/><con:config><script>// nMake a pause here : 7 seconds
+sleep(7000)</script></con:config></con:testStep><con:testStep type="restrequest" name="GET order after Cancel" id="bcdc1d32-1e8b-47d2-b652-a4804bc266b8"><con:settings/><con:config service="https://beta.shipwire.com" resourcePath="" methodName="GET Order" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="GET order after Cancel" id="c13759b7-97a3-4088-a44c-12cc47bba456" mediaType="application/json"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>https://api.shipwire.com/api/v3/orders/${#TestSuite#orderId}</con:endpoint><con:request/><con:originalUri>https://api.shipwire.com/api/v3/orders/213333342</con:originalUri><con:assertion type="Simple Contains" id="d28c7864-16b9-46e6-b6b8-31ba9ad545f7" name="Contains cancelled"><con:configuration><token>cancelled</token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:assertion type="Simple Contains" id="9012a63f-00d1-40f0-8221-11bbf6257e77" name="Contains status"><con:configuration><token>status</token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:assertion type="Simple Contains" id="3fa53016-87bf-4c5e-b3a6-ed9bea39b659" name="Contains address"><con:configuration><token>333 Escuela ave apt ${#TestCase#aptRand}</token><ignoreCase>true</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:assertion type="Simple Contains" id="e41fe80e-fb24-414f-8f3e-3bf5520dec52" name="Contains id"><con:configuration><token>${#TestSuite#orderId}</token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:credentials><con:username>shiptest@mailinator.com</con:username><con:password>test1234</con:password><con:domain>https://api.shipwire.com</con:domain><con:selectedAuthProfile>Basic</con:selectedAuthProfile><con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:restRequest></con:config></con:testStep><con:properties><con:property><con:name>orderId</con:name><con:value>213541852</con:value></con:property><con:property><con:name>aptRand</con:name><con:value>199</con:value></con:property><con:property><con:name>townhRand</con:name><con:value>36345</con:value></con:property></con:properties></con:testCase><con:properties><con:property><con:name>orderId</con:name><con:value>213541852</con:value></con:property></con:properties></con:testSuite><con:properties><con:property><con:name>orderID</con:name><con:value/></con:property></con:properties><con:wssContainer/><con:oAuth2ProfileContainer/></con:soapui-project>
